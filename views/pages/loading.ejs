@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+        <style>
+            .none {
+                display: none;
+            }
+        </style>
+</head>
+
+<body>
+    <%- include('../partials/header'); %>
+        <!----gosite-banner--->
+        <section class="gosite_banner loading-page-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 text-center">
+                        <!-- <img src="images/donut.svg" class="ellip-ico" /> -->
+                        <canvas id="setChart" width="400" height="400"></canvas>
+                    </div>
+                    <div class="col-md-9 gosite-banner-cont  ">
+
+                        <h1><b>SET<small>®</small> Results</b></h1>
+                        <p>Pulvinar aliquet ultricies commodo ut adipiscing in lacus, varius.
+                            Fermentum ipsum vitae amet, varius consectetur amet eget mi.</p>
+                        <div class="row m-0">
+                            <div class="col-md-3 ps-0">
+                                <ul>
+                                    <li class="w-100 float-start mt-4">
+                                        <span class="float-start pe-4"><img src="images/icon.svg"
+                                                class="ico-ico" /></span>
+                                        <span class="float-start">
+                                            <h1 class="gosite_big-txt mb-0 p-0"><b id="set_score">0% </b><img
+                                                    src="images/info.svg" class="info-ico" /></h1>SET® Score
+                                        </span>
+                                    </li>
+                                    <li class="w-100 float-start mt-3"><span class="float-start  pe-4"><img
+                                                src="images/flag-icon.svg" class="ico-ico" /></span>
+                                        <span class="float-start">
+                                            <h1 class="gosite_big-txt mb-0 p-0">
+                                                <b id="opportunity_count_score">0</b>
+                                                <img src="images/info.svg" class="info-ico" />
+                                            </h1>Opportunities
+                                        </span>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="col-md-9 ps-5">
+                                <h4>
+                                    <%=body.name %>
+                                </h4>
+                                <ul>
+                                    <li><img src="images/pin-3.svg" class="pin-ico" />
+                                        <%=address %>
+                                    </li>
+                                    <li><img src="images/phone.svg" class="phone-ico" />
+                                        <%=body.phone %>
+                                    </li>
+                                    <li><img src="images/globe.svg" class="global-ico" />
+                                        <%=body.website %>
+                                    </li>
+                                    <li class="gosite_Cta-btn"><a href="/dashboard" type="submit"
+                                            class="global-button btn btn-primary">SMALL CTA BUTTON</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!---body-section-->
+        <section class="gosite-body-cont process-page-list">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 mb-4 website-scaning">
+                        <div class="process-list">
+                            <div class="process-list-head">
+                                <h4>Website</h4>
+                            </div>
+                            <div class="process-list-cont">
+                                <p><img src="images/load-n.gif" class="ellip-ico" /> Processing...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-4 placmnt-scaning">
+                        <div class="process-list">
+                            <div class="process-list-head">
+                                <h4>Placement</h4>
+                            </div>
+                            <div class="process-list-cont">
+                                <p><img src="images/load-n.gif" class="ellip-ico" /> Processing...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-4 scan-discover">
+                        <div class="process-list">
+                            <div class="process-list-head">
+                                <h4>Discovery</h4>
+                            </div>
+                            <div class="process-list-cont">
+                                <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                                <p><img src="images/load-n.gif" class="ellip-ico" /> Processing...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-4 ">
+                        <div class="process-list">
+                            <div class="process-list-head">
+                                <h4>Top Keyword Rankings</h4>
+                            </div>
+                            <div class="process-list-cont key-ranking">
+                                <p><img src="images/load-n.gif" class="ellip-ico" /> Processing...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-4 rwe-respons">
+                        <div class="process-list">
+                            <div class="process-list-head">
+                                <h4>Review Responses</h4>
+                            </div>
+                            <div class="process-list-cont">
+                                <p><img src="images/load-n.gif" class="ellip-ico" /> Processing...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-4 Competitive-scaning">
+                        <div class="process-list">
+                            <div class="process-list-head">
+                                <h4>Competitive Analysis</h4>
+                            </div>
+                            <div class="process-list-cont">
+                                <p><img src="images/load-n.gif" class="ellip-ico" /> Processing...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <%- include('../partials/footer'); %>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script>
+            $(function () {
+                console.log("<%=body.name%>")
+                let postData = {
+                    name: "<%=body.name%>",
+                    address: "<%=address%>",
+                    phone: "<%=body.phone%>",
+                    website: "<%=body.website%>",
+                    jobId: "<%=jobId%>",
+                    scan_id: "<%=scan._id%>"
+                    // scan_id: "6195edcf953533a077f11890"
+                }
+        
+                $.ajax({
+                    type: 'POST',
+                    url: '/get_website_details',
+                    data: postData,
+                    success: function (response) {
+                        // console.log(response)
+                        $('.website-scaning').html(response)
+                        console.log('here');
+                        calculate_set_score();
+                    }
+                });
+                $.ajax({
+                    type: 'POST',
+                    url: '/get_discovery_details',
+                    data: postData,
+                    success: function (response) {
+                        // console.log(response)
+                        $('.scan-discover').html(response)
+                        const total = $("#total").val();
+                        const brand_search = $("#brand_search").val();
+                        const discovery_search = $("#discovery_search").val();
+                        const direct_search = $("#direct_search").val();
+
+                        const ctx = document.getElementById('myChart');
+                        const myChart = new Chart(ctx, {
+                            type: 'doughnut',
+                            data: {
+                                labels: ['Direct', 'Branded', 'Discovery'],
+                                datasets: [{
+                                    label: '# of Votes',
+                                    data: [direct_search, brand_search, discovery_search],
+                                    backgroundColor: [
+                                        '#c2d6ff',
+                                        '#3d7eff',
+                                        '#0357ff'
+                                    ],
+                                    hoverOffset: 4
+                                }]
+                            }
+                        });
+                    }
+                });
+                $.ajax({
+                    type: 'POST',
+                    url: '/get_keyword_details',
+                    data: postData,
+                    success: function (response) {
+                        console.log(response)
+                        $('.key-ranking').html(response)
+                    }
+                })
+        
+                $.ajax({
+                    type: 'POST',
+                    url: '/get_competitive_details',
+                    data: postData,
+                    success: function (response) {
+                        // console.log(response)
+                        $('.Competitive-scaning').html(response)
+                    }
+                });
+        
+                setTimeout(() => {
+                    console.log('settimeout');
+                    $.ajax({
+                        type: 'POST',
+                        url: '/get_review_details',
+                        data: postData,
+                        success: function (response) {
+                            // console.log(response)
+                            $('.rwe-respons').html(response)
+                            calculate_set_score();
+                        }
+                    });
+        
+                    $.ajax({
+                        type: 'POST',
+                        url: '/get_placement_details',
+                        data: postData,
+                        success: function (response) {
+                            // console.log(response)
+                            $('.placmnt-scaning').html(response)
+                            console.log('get_placement_details')
+                            calculate_set_score();
+                            const opportunity_count = $("#opportunity_count").text();
+                            $("#opportunity_count_score").text(opportunity_count);
+                        }
+                    });
+                }, 5000);
+            });
+        
+            var i = 0;
+            function calculate_set_score() {
+                var total = 0;
+                var page_speed = $("#psi_score").val();
+                var review_score = $("#review_score").text();
+                var name_score = $("#match_name").text();
+                var address_score = $("#match_address").text();
+                var phone_score = $("#match_phone").text();
+                var secure_score = $("#secure_score").text();
+                console.log("page_speed = " + page_speed);
+                console.log("review_score = " + review_score);
+                console.log("name_score = " + name_score);
+                console.log("address_score = " + address_score);
+                console.log("phone_score = " + phone_score);
+                if (page_speed != undefined) {
+                    total = Number(total) + Number(page_speed);
+                }
+                if (review_score != undefined) {
+                    console.log('inside');
+                    if (Number(review_score) >= 5) {
+                        total = Number(total) + 100;
+                    } else {
+                        total = Number(total) + 0;
+                    }
+                }
+                if (secure_score != undefined) {
+                    if (secure_score == 1) {
+                        total = Number(total) + 100;
+                    } else {
+                        total = Number(total) + 0;
+                    }
+                }
+                if (name_score != undefined) {
+                    if (name_score == 0) {
+                        total = Number(total) + 0;
+                    } else {
+                        total = Number(total) + 100;
+                    }
+                }
+                if (address_score != undefined) {
+                    if (address_score == 0) {
+                        total = Number(total) + 0;
+                    } else {
+                        total = Number(total) + 100;
+                    }
+                }  
+                if (phone_score != undefined) {
+                    if (phone_score == 0) {
+                        total = Number(total) + 0;
+                    } else {
+                        total = Number(total) + 100;
+                    }
+                }
+        
+                const set_score = total / 6;
+                const remaining = 100 - set_score;
+                console.log("total ==" + total);
+                console.log("set_score ==" + set_score);
+                $("#set_score").text(set_score.toFixed(0) + '%');
+                i = i+1;
+                // alert(i)
+                if(i == 3){
+                    const abc = document.getElementById('setChart');
+                    const setChart = new Chart(abc, {
+                        type: 'doughnut',
+                        data: {
+                            labels: [],
+                            datasets: [{
+                                label: '# of Votes',
+                                data: [remaining.toFixed(0),set_score.toFixed(0)],
+                                backgroundColor: [
+                                    '#c2d6ff',
+                                    '#0357ff'
+                                ],
+                                hoverOffset: 4
+                            }]
+                        }
+                    });
+
+                    const opportunity_count = $("#opportunity_count").text();
+                    axios.post('/save_set_score', {
+                        scan_id: "<%=scan._id%>",
+                        set_score: set_score.toFixed(0),
+                        opportunity_count: opportunity_count,
+                        
+                    })
+                    .then(function (response) {
+                        console.log('response',response);
+                    })
+                    .catch(function (error) {
+                        console.log('error',error);
+                    })
+                    .then(function () {
+                        console.log('then always');
+                        // always executed
+                    }); 
+                }
+            }
+        </script>
+        
+        
+</body>
+
+</html>

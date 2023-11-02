@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gosite Sign In</title>
+    <link rel="icon" href="images/fav-icon.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="css/bootstrap.css" crossorigin="anonymous">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <!----navigation-bar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light  " id="gosite-navbar" style="display: block;">
+        <div class="col-md-12 text-center">
+            <a class="navbar-brand" href="/"><img src="images/gosite-logo.png" class="site-logo brand navbar-brand"></a>
+
+        </div>
+    </nav>
+    <!---body-section-->
+    <section class="gosite-body-cont gosite-page-Sign-in">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2 ">
+                    <div class="gosite-banner-cont">
+                        <h1><b>Sales Enablement Tool<small>®</small></b></h1>
+                        <p>Faucibus vitae, mattis enim consequat id sollicitudin. Mattis
+                            iaculis id odio neque. Risus duis nisl aliquet nulla sed posuere purus ipsum.</p>
+                    </div>
+                    <div class="gosite-login-form  gosite-forms">
+                        <h4 class="gosite-banner-head">
+                            <img src="images/graph-statistics-coffee.png" class="cofee-ico" />
+                            Fill out the form below to start the scanning process...
+                        </h4>
+                        <form action="/sign_in" method="post">
+                            <div class="mb-3">
+                                <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Email address">
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" name="password" class="form-control" id="exampleInputPassword1"
+                                    placeholder="Password">
+                                <img src="images/eye.png" class="eye-ico" />
+                            </div>
+                            <!-- <a type="submit" class="global-button w-100 btn btn-primary">SIGN IN</a> -->
+                                <button id="buttonSignup" 
+                                class="btn btn-xl bg-primary btn-block text-white btn-shadow d-flex 
+                                align-items-center justify-content-center" type="submit">
+                                SIGN IN</button>
+                            <div class="mb-3 form-check rembr-box">
+                                <label class="form-check-label pr-2" for="exampleCheck1">Remember Me</label>
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            </div>
+                        </form>
+                        <div class="social-login">
+                            <a href="/auth/google"> 
+                                <button class="btn ">
+                                    <img src="images/google-icon.svg"alt=""> Sign in with Google
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gosite-new-users">
+                        <a href="#">Forgot Password? Reset Password Here</a>
+                        <p>or</p>
+                        <a href="/sign-up">Create New Account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!------footer--->
+    <%- include('../partials/footer'); %>
+
+        <script>
+            window.onload = function () {
+                console.log('page ready');
+            }
+        </script>
+
+</body>
+
+</html>

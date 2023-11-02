@@ -1,0 +1,78 @@
+<% if (success) { %>
+    <div class="process-list"> 
+        <div class="process-list-head border-0">
+            <h4 class="mb-3">Website</h4>
+            <p>Consequat sit egestas velit velit, sit faucibus fermentum donec fermentum. Tellus
+                amet, sed
+                et massa habitasse. Iaculis vehicula nisl rutrum malesuada.</p>
+            <div class=" process-inner-list row m-0 text-center mt-4 ">
+                <input type="hidden" id="psi_score" value="<%=avg_score%>">
+                <div class="col-md-6  ps-0">
+                    <div class="process-list p-4">
+                        <h5 class="text-primary"><img src="images/guard.svg" class="global-ico pe-2" /><b>
+                                Website Secure</b></h5>
+                        <p class="text-center">
+                            <%=body.website%>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6  pe-0">
+                    <div class="process-list p-4">
+                        <h5 class="text-primary"><img src="images/Vector.svg" class="global-ico pe-2" /><b>Yext Answers
+                                Present</b></h5>
+                        <p class="text-center">
+                            <%=body.website%>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="gosite_page-speed_score mt-4">
+                <h5 class="mb-3 text-center"><b>Website Page Speed Score</b></h5>
+                <div class="row px-5 test-[rogress-bars mb-5">
+                    <div class=" col-md-2 pt-2">
+                        <span class="float-start pe-3 pt-2"><img src="images/cellphone-link.svg" class="ico-ico" /></span>
+                        <span class="float-start">
+                            <h1 class="gosite_big-txt mb-0 p-0"><b>
+                                    <%=avg_score%>%
+                                </b></h1>
+                            <p>Speed Score</p>
+                        </span>
+                    </div>
+                    <div class="col-md-10 test-progress-bars ps-5">
+                        <div class="progress mobile-progress-count">
+                            <div class="progress-bar text-end" role="progressbar" style="width: 97%;" aria-valuenow="97"
+                                aria-valuemin="0" aria-valuemax="100">
+                                <span class="text-start w-auto float-start ps-3">
+                                    <img src="images/cellphone 1.svg" class="global-ico pe-2" />Mobile</span>
+                                <span class="text-end w-auto float-end">
+                                    <%=mobile_score%>%
+                                </span>
+                            </div>
+                        </div>
+                        <div class="progress mt-3 Desktop-progress-count">
+                            <div class="progress-bar text-end" role="progressbar" style="width: 93%;" aria-valuenow="97"
+                                aria-valuemin="0" aria-valuemax="100">
+                                <span class="text-start w-auto float-start ps-3">
+                                    <img src="images/Desktop.svg" class="global-ico pe-2" />Desktop</span>
+                                <span class="text-end w-auto float-end">
+                                    <%=desktop_score%>%
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<% } else { %>
+    <div class="process-list">
+        <div class="process-list-head ">
+            <h4><span class="text-start ">Website</span>
+            </h4>
+        </div>
+
+        <div class="process-list-cont">
+            <p><%=error%></p>
+        </div>
+    </div>
+<% } %>

@@ -1,0 +1,68 @@
+<% if (success) { %>
+    <div class="process-list">
+        <div class="process-list-head ">
+            <h4><span class="text-start ">Review Responses</span>
+                <span class="text-end text-primary float-end place-rate"><b>0% Response
+                        Rate</b></span>
+            </h4>
+        </div>
+
+        <div class="row pb-5">
+            <div class="col-md-3 text-center donut-img">
+                <img src="images/light-donut.svg" class="ellip-ico" />
+            </div>
+            <div class="col-md-2 gosite-banner-cont pe-0  ">
+                <div class="w-100 mt-4 list-itams-image star-list">
+                    <span class="pe-4 icon-list-image"><img src="images/star-icon.svg" class="star-ico"></span>
+                    <span class="list-img-cont">
+                        <h1 class="gosite_big-txt mb-0 p-0"><b>
+                                <%=rating%>
+                            </b></h1>Overall Rating
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-md-2 gosite-banner-cont pe-0  ">
+                <div class="w-100 mt-4 list-itams-image rew-list">
+                    <span class=" pe-4 icon-list-image"><img src="images/reviews.svg" class="rew-ico"></span>
+                    <span class="list-img-cont">
+                        <h1 class="gosite_big-txt mb-0 p-0"><b id="review_score">
+                                <%=total_review%>
+                            </b><img src="images/info.svg" class="info-ico"></h1>Total Reviews
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-2 gosite-banner-cont pe-0  ">
+                <div class="w-100  mt-4 list-itams-image">
+                    <span class="pe-4 icon-list-image"><img src="images/messages-bubble.svg" class="buble-ico"></span>
+                    <span class="list-img-cont">
+                        <h1 class="gosite_big-txt mb-0 p-0"><b>
+                                <%=total_review%>
+                            </b><img src="images/info.svg" class="info-ico"></h1>Unaddressed
+                        Reviews
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-2 gosite-banner-cont pe-0  ">
+                <div class="w-100  mt-4 list-itams-image">
+                    <span class=" pe-4 icon-list-image"><img src="images/Standing-prsn.svg" class="person-ico"></span>
+                    <span class="list-img-cont">
+                        <h1 class="gosite_big-txt mb-0 p-0"><b>0</b></h1>Reviews from last 30
+                        days
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+<% } else { %>
+    <div class="process-list">
+        <div class="process-list-head ">
+            <h4><span class="text-start ">Review Responses</span>
+            </h4>
+        </div>
+
+        <div class="process-list-cont">
+            <p><%=error%></p>
+        </div>
+    </div>
+<% } %>

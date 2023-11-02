@@ -1,0 +1,90 @@
+<% if (success) { %>
+    <div class="process-list">
+        <div class="process-list-head border-0">
+            <h4 class="mb-3">Competitive Analysis</h4>
+            <p>Viverra eu vitae amet consectetur ultricies. Nisi adipiscing mauris proin dictum.
+                Consectetur a lectus volutpat id. Facilisis cursus tellus a odio erat sit.
+                Quis hendrerit ultrices congue euismod nascetur. Ullamcorper vitae eget nulla eu
+                quisque sagittis cursus porttitor.</p>
+            <span class="none" id="secure_score">
+                <%=ssl_secure%>
+            </span> 
+            <div class="row m-0 border  list_inone">
+                <% secure_array.forEach(function(post){ %>
+                    <div class="col-md-4">
+                        <span class="bullets"><img src="images/list-dark.svg" class="pin-ico float-start me-2"></span>
+                        <h6 class="gosite_big-txt mb-0 p-0 global-gray"><b>
+                                <%=post.name%>
+                            </b></h6>
+                        <p>
+                            <%=post.address%>      
+                        </p>
+                    </div> 
+                <% }) %> 
+            </div>
+            <div class=" process-inner-list row m-0 text-center mt-4 ">
+                <h5 class="mb-3 text-center"><b>Website Secure</b></h5>
+                <% secure_array.forEach(function(post){ %>
+                    <% if(post.secure.valid) { %>
+                        <div class="col-md-4  ps-0 secure-card">
+                            <div class="process-list p-4">
+                                <h5 class="text-primary">
+                                    <img src="images/guard.svg" class="global-ico pe-2" />
+                                    <b> Secure</b>
+                                </h5>
+                                <p class="text-center">
+                                    <%=post.name%><br>
+                                        https://<%=post.url%>
+                                </p>
+                            </div>
+                        </div>
+                    <% } else { %>
+                        <div class="col-md-4  pe-0 no-secure-card">
+                            <div class="process-list p-4">
+                                <h5 class="global-gray"><img src="images/Cross.svg" class="global-ico pe-2" /><b>Not
+                                        Secure</b>
+                                </h5>
+                                <p class="text-center">
+                                    <%=post.name%><br>
+                                        http://<%=post.url%>
+                                </p>
+                            </div>
+                        </div>
+                    <% } %>
+                <% }) %>
+            </div>
+            <div class="gosite_page-speed_score mt-4">
+                <h5 class="mb-4  text-center"><b>Website Page Speed Score</b></h5>
+                <div class="row px-5 test-progress-bars mb-5">
+                    <div class="col-md-12 test-progress-bars ps-5">
+                        <% secure_array.forEach(function(post){ %>
+                            <div class="progress mobile-progress-count">
+                                <div class="progress-bar text-end" role="progressbar" style="width: 95%;" aria-valuenow="97"
+                                    aria-valuemin="0" aria-valuemax="100">
+                                    <span class="text-start w-auto float-start ps-3">
+                                        <img src="images/cellphone-link00.svg" class="global-ico pe-2" />
+                                        <%=post.name%>
+                                    </span>
+                                    <span class="text-end w-auto float-end">
+                                        <%=(post.score * 100).toFixed(0)%>%
+                                    </span>
+                                </div>
+                            </div>
+                            <% }) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<% } else { %>
+    <div class="process-list">
+        <div class="process-list-head ">
+            <h4><span class="text-start ">Competitive Analysis</span>
+            </h4>
+        </div>
+
+        <div class="process-list-cont">
+            <p><%=error%></p>
+        </div>
+    </div>
+<% } %>

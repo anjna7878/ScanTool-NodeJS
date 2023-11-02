@@ -1,0 +1,16 @@
+<% if(keywords.length> 0 ) { %>
+    <ul class="ranking-lists">
+        <% keywords.forEach(function(post){ %>
+            <% if(post.position !='' ) { %>
+                <li>
+                    <span class="bullets"><img src="images/Vector-up.svg"
+                            class="pin-ico float-start me-2" /></span>
+                    <p>#<%= post.position %>
+                            <%= post.key %>
+                    </p>
+                </li>
+                <% }}) %>
+    </ul>
+<% } else { %>
+    <span>No Keyword Found</span>
+<% } %>

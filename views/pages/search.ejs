@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body class="container">
+
+    <header>
+        <!-- <%- include('../partials/header'); %> -->
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+            <table class="table table-bordered table-striped">
+                <tbody>
+                    <% keywords.forEach(function(post){ %>
+                        <tr>
+                            <td>
+                                <%= post.key %>
+                            </td>
+                            <td>
+                                <%= post.position %>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+
+            <h2>Lab Data</h2>
+            <p>The .table-hover class enables a hover state (grey background on mouse over) on table rows:</p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <tbody>
+                        <% for(var item in data) { %>
+                            <tr>
+                                <td>
+                                    <%= data[item].title %>
+                                </td>
+                                <td>
+                                    <%= data[item].score %>
+                                </td>
+                            </tr>
+                            <% }%>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+            <script>
+                window.onload = function () {
+
+                    var chart = new CanvasJS.Chart("chartContainer", {
+                        animationEnabled: true,
+                        title: {
+                            text: "<%= score %>",
+                            verticalAlign: "center",
+                            dockInsidePlotArea: true
+                        },
+                        data: [{
+                            type: "doughnut",
+                            startAngle: 60,
+                            //innerRadius: 60,
+                            indexLabelFontSize: 67,
+                            // indexLabel: "{label} - #percent%",
+                            // toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+                            dataPoints: [
+                                { y: "<%= score %>", color: "#ffa400" },
+                            ]
+                        }]
+                    });
+                    chart.render();
+                }
+            </script>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,268 @@
+<% if (success) { %>
+    <div class="process-list">
+        <div class="process-list-head border-0">
+            <h4><span class="text-start ">Placement</span><span
+                    class="text-end text-primary float-end place-rate"><b>18%</b></span></h4>
+        </div>
+
+        <div class="Placement-table overflow-auto">
+            <table class="dash-user-table table scaning-table gosite-table">
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Site</th>
+                        <th scope="col">Business Name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% const sites=process.env.sites.split(',') %>
+                    <% let opportunity_count=0; %>
+                    <% google.data.response.forEach(function(site,key){ %>
+                        <% if(key <=3 ) { %>
+                            <% if(site.match_name==false ) { opportunity_count=opportunity_count + 1; } %>
+                            <% if(site.match_address==false ) { opportunity_count=opportunity_count + 1; } %>
+                            <% if(site.match_phone==false ) { opportunity_count=opportunity_count + 1; } %>
+                            <tr>
+                                <td>
+                                    <div class="w-100 float-start mt-4">
+                                        <span
+                                            class="float-start  gloxbal-gray_bg rounded-circle py-3 px-3  me-3"><img
+                                                src="images/<%=site.siteId%>.svg"
+                                                class="ico-ico" /></span>
+                                        <span class="float-start mt-2 ">
+                                            <h6 class="gosite_big-txt mb-0 p-0 global-gray">
+                                                <b>
+                                                    <%=site.siteId%>
+                                                </b>
+                                            </h6>
+                                            <% if(site.status =='LISTING_FOUND') { %>
+                                                <a target="_blank" href="<%=site.url%>">
+                                                    <p class="text-primary">View Listing</p>
+                                                </a>
+                                            <% } %>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p>
+                                        <% if(site.status !='NO_MATCH' ) { %>
+                                            <%=site.name%>
+                                                <% }%>
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        <% if(site.status !='NO_MATCH' ) { %>
+                                            <%=site.address%>
+                                                <% }%>
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        <% if(site.status !='NO_MATCH' ) { %>
+                                            <%=site.phone%>
+                                                <% }%>
+                                    </p>
+                                </td>
+                                <td>
+                                    <% if(site.status=='NO_MATCH' ) { 
+                                        opportunity_count=opportunity_count + 3;
+                                    %>
+                                        <button type="button" class="btn btn-danger"><img
+                                                src="images/error-4.svg" class="ico-ico pe-3" />Not
+                                            Found</button>
+                                    <% } else { if(site.match_name==false ) { %>
+                                        <span id="match_name" class="btn btn-warning none">0</span>
+                                        <button type="button" class="btn btn-warning">
+                                            <img src="images/warning.svg" class="ico-ico pe-3" />
+                                                Wrong Name
+                                        </button>
+                                    <% } else if(site.match_address==false ) { %>
+                                        <span id="match_address" class="btn btn-warning none">0</span>
+                                        <button type="button" class="btn btn-warning">
+                                            <img src="images/warning.svg" class="ico-ico pe-3" />Wrong
+                                                    Address
+                                        </button>
+                                    <% } else if(site.match_phone==false ) { %>
+                                        <span id="match_phone"
+                                            class="btn btn-warning none">0</span>
+                                        <button type="button" class="btn btn-warning"><img
+                                                src="images/warning.svg"
+                                                class="ico-ico pe-3" />Wrong
+                                            Phone Number</button>
+                                    <% } else { %>
+                                        <span id="match_name"
+                                            class="btn btn-warning none">1</span>
+                                        <span id="match_address"
+                                            class="btn btn-warning none">1</span>
+                                        <span id="match_phone"
+                                            class="btn btn-warning none">1</span>
+                                        <button type="button"
+                                            class="btn btn-success"><img
+                                                src="images/verified.png"
+                                                class="ico-ico pe-3" />Verified</button>
+                                    <% } }%>
+                                </td>
+                            </tr>
+                        <% } %>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+        <div id="show-more" class="ex-btn"><a href="#show-more-content"><span class="txt-expnt"><i class="fa fa-arrow-up"></i>EXPAND ALL</span></a></div>
+        
+        <div class="" id="show-more-content">
+            <!--<p class="table-expnd-btn">
+                <a class="btn btn-primary global-gray collapsed" data-bs-toggle="collapse" href="#collapseExample"
+                    role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <span class="txt-expnt"><i class="fa fa-arrow-up"></i> EXPAND ALL </span>
+                </a>
+            </p>-->
+            
+            
+            <div class="p-0" id="collapseExample">
+                <div class="card card-body p-0 border-0">
+                    <table class="dash-user-table table scaning-table gosite-table">
+                        <!--<thead class="table-none">
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>-->
+                        <tbody>
+                            <% google.data.response.forEach(function(site,key){ %>
+                                <% if(key>3 ) { %>
+                                    <% if(site.match_name==false ) { opportunity_count=opportunity_count + 1; } %>
+                                    <% if(site.match_address==false ) { opportunity_count=opportunity_count + 1; } %>
+                                    <% if(site.match_phone==false ) { opportunity_count=opportunity_count + 1; } %>
+                                    <tr>
+                                        <td>
+                                            <div class="w-100 float-start mt-4">
+                                                <span
+                                                    class="float-start  gloxbal-gray_bg rounded-circle py-3 px-3  me-3"><img
+                                                        src="images/<%=site.siteId%>.svg"
+                                                        class="ico-ico" /></span>
+                                                <span class="float-start mt-2 ">
+                                                    <h6 class="gosite_big-txt mb-0 p-0 global-gray">
+                                                        <b>
+                                                            <%=site.siteId%>
+                                                        </b>
+                                                    </h6>
+                                                    <% if(site.status =='LISTING_FOUND') { %>
+                                                        <a target="_blank" href="<%=site.url%>">
+                                                            <p class="text-primary">View Listing</p>
+                                                        </a>
+                                                        <% }%>
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <% if(site.status !='NO_MATCH' ) { %>
+                                                    <%=site.name%>
+                                                        <% }%>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <% if(site.status !='NO_MATCH' ) { %>
+                                                    <%=site.address%>
+                                                        <% }%>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <% if(site.status !='NO_MATCH' ) { %>
+                                                    <%=site.phone%>
+                                                        <% }%>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <% if(site.status=='NO_MATCH' ) {
+                                                opportunity_count=opportunity_count + 3;
+                                            %>
+                                                <button type="button" class="btn btn-danger"><img
+                                                        src="images/error-4.svg" class="ico-ico pe-3" />Not
+                                                    Found</button>
+                                            <% } else { if(site.match_name==false ) { %>
+                                                <span id="match_name" class="btn btn-warning none">0</span>
+                                                <button type="button" class="btn btn-warning"><img
+                                                        src="images/warning.svg"
+                                                        class="ico-ico pe-3" />Wrong
+                                                    Name</button>
+                                            <% } else if(site.match_address==false ) { %>
+                                                <span id="match_address"
+                                                    class="btn btn-warning none">0</span>
+                                                <button type="button" class="btn btn-warning"><img
+                                                        src="images/warning.svg"
+                                                        class="ico-ico pe-3" />Wrong
+                                                    Address</button>
+                                            <% } else if(site.match_phone==false ) { %>
+                                                <span id="match_phone"
+                                                    class="btn btn-warning none">0</span>
+                                                <button type="button" class="btn btn-warning"><img
+                                                        src="images/warning.svg"
+                                                        class="ico-ico pe-3" />Wrong
+                                                    Phone Number</button>
+                                            <% } else { %>
+                                                <span id="match_name"
+                                                    class="btn btn-warning none">1</span>
+                                                <span id="match_address"
+                                                    class="btn btn-warning none">1</span>
+                                                <span id="match_phone"
+                                                    class="btn btn-warning none">1</span>
+                                                <button type="button"
+                                                    class="btn btn-success"><img
+                                                        src="images/verified.png"
+                                                        class="ico-ico pe-3" />Verified</button>
+                                            <% } }%>
+                                        </td>
+                                    </tr>
+                                <% } %>
+                                <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="show-less" class="ex-btn"><a href="#show-more-content"><span class="txt-expnt"><i class="fa fa-arrow-down"></i>COLLAPSE</span></a></div>
+            <span class="none" id="opportunity_count">
+                <%=opportunity_count%>
+            </span>
+        </div>
+    </div>
+
+    <script>
+        $('#show-more-content').hide();
+
+        $('#show-more').click(function(){
+            $('#show-more-content').show();
+            $('#show-less').show();
+            $('#show-more').hide();
+        });
+
+        $('#show-less').click(function(){
+            $('#show-more-content').hide();
+            $('#show-more').show();
+            $(this).hide();
+            $('html,body').animate({
+                scrollTop: $(".Placement-table").offset().top},
+                'slow');
+        });
+    </script>
+<% } else { %>
+    <div class="process-list">
+        <div class="process-list-head ">
+            <h4><span class="text-start ">Placement</span>
+            </h4>
+        </div>
+
+        <div class="process-list-cont">
+            <p><%=error%></p>
+        </div>
+    </div>
+<% } %>

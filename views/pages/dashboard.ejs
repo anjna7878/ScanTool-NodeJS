@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body>
+    <%- include('../partials/header'); %>
+    <!---body-section-->
+    <section class="gosite-body-cont gosite-dashboard">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-start">
+                    <div class="gosite-banner-cont">
+                        <h1><b>Sales Enablement Tool<small>®</small></b></h1>
+                        <p>Faucibus vitae, mattis enim consequat id sollicitudin. Mattis
+                            iaculis id odio neque. Risus duis nisl aliquet nulla sed posuere purus ipsum.</p>
+                    </div>
+                    <div class="dashboard-table">
+                        <div class="dash-table_head">
+                            <div class="process-list-head m-0 row">
+                                <div class="col-md-8">
+                                    <h4><%= scans.length %> Locations</h4>
+                                </div>
+                                <div class="col-md-4 search-form gosite-forms">
+                                    <form class="gosite-forms">
+                                        <div class="input-group">
+                                            <img src="images/search-1.png" class="search-ico" />
+                                            <input type="text" class="form-control" id="exampleInputsearch"
+                                                placeholder="search">
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                        <table class="dash-user-table table">
+                            <thead class="table-light">
+                                <tr>
+                                    <th scope="col">Location Name</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Phone</th>
+                                    <th scope="col">SET Score®</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% scans.forEach(scan => { %>
+                                <tr>
+                                    <td>
+                                        <h5><%= scan.name %></h5>
+                                        <!-- <p>Cha For Tea UTC</p> -->
+                                    </td>
+                                    <td>
+                                        <p><%= scan.address %></p>
+                                    </td>
+                                    <td>
+                                        <p><%= scan.phone %></p>
+                                    </td>
+                                    <td>
+                                        <p><%= scan.set_score %>%</p>
+                                    </td>
+                                    <td>
+                                        <a href="/scan/<%=scan._id%>">
+                                            <button type="button" class="btn btn-secondary">MANAGE</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <% } )%>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <%- include('../partials/footer'); %>
+
+</body>
+
+</html>

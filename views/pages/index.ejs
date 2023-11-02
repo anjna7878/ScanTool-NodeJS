@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body>
+    <%- include('../partials/header'); %>
+    <!----gosite-banner--->
+    <section class="gosite_banner home-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 gosite-banner-cont">
+                    <h4 class="global-color">
+                        <img src="images/graph-statistics-coffee.svg" class="cofee-ico" /><b>Sales
+                            Enablement<small>®</small></b>
+                    </h4>
+                    <h1><b>Sales Enablement Tool<small>®</small></b></h1>
+                    <p>Check out the all-in-one platform that makes it easier for customers to find, book,
+                        and pay for your services online - instantly. No technical experience needed.</p>
+                </div>
+                <div class="col-md-6 gosite-banner-form pl-4  gosite-forms">
+                    <h4 class="gosite-banner-head">
+                        <img src="images/graph-statistics-coffee.svg" class="cofee-ico" />
+                        Fill out the form below to start the scanning process...
+                    </h4>
+                    <form action="/scan" method="post">
+                        <div class="mb-3">
+                            <input type="text" required class="form-control" name="name" id="Business-Name" placeholder="Business Name*" aria-describedby="emailHelp">
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" required name="address" class="form-control" id="Business-Address1" placeholder="Address*" aria-describedby="emailHelp">
+                        </div>
+
+       
+                        <div class="mb-3 row mx-0 form-web-phone">
+                            <div class="col-md-6 form-group">
+                                <input type="text" name="address_1" class="form-control" id="Business-Address2" placeholder="Apartment, suite, floor" aria-describedby="emailHelp">
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input type="text" name="city" class="form-control" id="Business-City" required placeholder="City*" aria-describedby="emailHelp" />
+                            </div>
+                        </div>
+                        <div class="mb-3 row mx-0 form-web-phone">
+                            <div class="col-md-6 form-group">
+                                <input type="text" name="state" class="form-control" id="State" required placeholder="State*" aria-describedby="emailHelp">
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input type="text" name="zipcode" placeholder="Zipcode*" required aria-describedby="emailHelp" class="form-control" />
+                                <img src="images/pin-3.svg" class="pin-ico" />
+                            </div>
+                        </div>
+                        <div class="mb-3 row mx-0 form-web-phone">
+                            <div class="col-md-6 form-group">
+                                <input required name="phone" class="form-control" id="Business-Phone" onInput="this.value = phoneFormat(this.value)" placeholder="Business Phone*" aria-describedby="emailHelp">
+                                <img src="images/phone.svg" class="phone-ico" />
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input type="url" required name="website" placeholder="Business Website" aria-describedby="emailHelp" class="form-control" />
+                                <img src="images/globe.svg" class="global-ico" />
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" name="email" class="form-control" id="Contact-Address" placeholder="Contact Email Address*" aria-describedby="emailHelp">
+                            <i class="fa fa"> @</i>
+                        </div> 
+                        <button type="submit" class="btn btn-primary global-button">START
+                            SET<small>®</small>SCAN </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---body-section-->
+    <section class="gosite-body-cont">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-2">
+                    <h1>Your five star opportunity to standout</h1>
+                    <p>Your reputation takes years to build. Don't let one review change that.</p>
+                    <p>From Yelp to facebook, we help you manage and generate reviews in one place.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('../partials/footer'); %>
+
+    <script>
+        function phoneFormat(input) {
+            input = input.replace(/\D/g, '').substring(0, 10); //Strip everything but 1st 10 digits
+            var size = input.length;
+            if (size > 0) {
+                input = "(" + input
+            }
+            if (size > 3) {
+                input = input.slice(0, 4) + ") " + input.slice(4)
+            }
+            if (size > 6) {
+                input = input.slice(0, 9) + "-" + input.slice(9)
+            }
+            return input;
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

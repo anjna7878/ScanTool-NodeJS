@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body>
+    <%- include('../partials/header'); %>
+        <section class="gosite_banner loading-page-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 text-center">
+                        <img src="images/donut.svg" class="ellip-ico" />
+                    </div>
+                    <div class="col-md-9 gosite-banner-cont  ">
+
+                        <h1><b>SET<small>®</small> Results</b></h1>
+                        <p>Pulvinar aliquet ultricies commodo ut adipiscing in lacus, varius.
+                            Fermentum ipsum vitae amet, varius consectetur amet eget mi.</p>
+                        <div class="row m-0">
+                            <div class="col-md-3 ps-0">
+                                <ul>
+                                    <li class="w-100 float-start mt-4">
+                                        <span class="float-start pe-4"><img src="images/icon.svg"
+                                                class="ico-ico" /></span>
+                                        <span class="float-start">
+                                            <h1 class="gosite_big-txt mb-0 p-0"><b>44% </b><img src="images/info.svg"
+                                                    class="info-ico" /></h1>SET® Score
+                                        </span>
+                                    </li>
+                                    <li class="w-100 float-start mt-3"><span class="float-start  pe-4"><img
+                                                src="images/flag-icon.svg" class="ico-ico" /></span>
+                                        <span class="float-start">
+                                            <h1 class="gosite_big-txt mb-0 p-0"><b>32</b> <img src="images/info.svg"
+                                                    class="info-ico" /></h1>Opportunities
+                                        </span>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="col-md-9 ps-5">
+                                <h4>
+                                    <%=body.name %>
+                                </h4>
+                                <ul>
+                                    <li><img src="images/pin-3.svg" class="pin-ico" />
+                                        <%=body.address %>
+                                    </li>
+                                    <li><img src="images/phone.svg" class="phone-ico" />
+                                        <%=body.phone %>
+                                    </li>
+                                    <li><img src="images/globe.svg" class="global-ico" />
+                                        <%=body.website %>
+                                    </li>
+                                    <li class="gosite_Cta-btn"><a href="/dashboard" type="submit"
+                                            class="global-button btn btn-primary">SMALL CTA BUTTON</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!---body-section-->
+        <section class="gosite-body-cont process-page-list">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 mb-4 website-scaning">
+                        <div class="process-list">
+                            <div class="process-list-head border-0">
+                                <h4 class="mb-3">Website</h4>
+                                <p>Consequat sit egestas velit velit, sit faucibus fermentum donec fermentum. Tellus
+                                    amet, sed
+                                    et massa habitasse. Iaculis vehicula nisl rutrum malesuada.</p>
+                                <div class=" process-inner-list row m-0 text-center mt-4 ">
+                                    <div class="col-md-6  ps-0">
+                                        <div class="process-list p-4">
+                                            <h5 class="text-primary"><img src="images/guard.svg"
+                                                    class="global-ico pe-2" /><b>
+                                                    Website Secure</b></h5>
+                                            <p class="text-center">
+                                                <%=body.website%>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6  pe-0">
+                                        <div class="process-list p-4">
+                                            <h5 class="text-primary"><img src="images/Vector.svg"
+                                                    class="global-ico pe-2" /><b>Yext Answers Present</b></h5>
+                                            <p class="text-center">
+                                                <%=body.website%>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gosite_page-speed_score mt-4">
+                                    <h5 class="mb-3 text-center"><b>Website Page Speed Score</b></h5>
+                                    <div class="row px-5 test-[rogress-bars mb-5">
+                                        <div class=" col-md-2 pt-2">
+                                            <span class="float-start pe-3 pt-2"><img src="images/cellphone-link.svg"
+                                                    class="ico-ico" /></span>
+                                            <span class="float-start">
+                                                <h1 class="gosite_big-txt mb-0 p-0"><b>95%</b></h1>
+                                                <p>Speed Score</p>
+                                            </span>
+                                        </div>
+                                        <div class="col-md-10 test-progress-bars ps-5">
+                                            <div class="progress mobile-progress-count">
+                                                <div class="progress-bar text-end" role="progressbar"
+                                                    style="width: 97%;" aria-valuenow="97" aria-valuemin="0"
+                                                    aria-valuemax="100">
+                                                    <span class="text-start w-auto float-start ps-3">
+                                                        <img src="images/cellphone 1.svg"
+                                                            class="global-ico pe-2" />Mobile</span>
+                                                    <span class="text-end w-auto float-end">
+                                                        <%=mobile_score * 100%>%
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="progress mt-3 Desktop-progress-count">
+                                                <div class="progress-bar text-end" role="progressbar"
+                                                    style="width: 93%;" aria-valuenow="97" aria-valuemin="0"
+                                                    aria-valuemax="100">
+                                                    <span class="text-start w-auto float-start ps-3">
+                                                        <img src="images/Desktop.svg"
+                                                            class="global-ico pe-2" />Desktop</span>
+                                                    <span class="text-end w-auto float-end">
+                                                        <%=desktop_score * 100%>%
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-4 placmnt-scaning  ">
+                        <div class="process-list">
+                            <div class="process-list-head border-0">
+                                <h4><span class="text-start ">Placement</span><span
+                                        class="text-end text-primary float-end place-rate"><b>18%</b></span></h4>
+                            </div>
+
+                            <div class="Placement-table overflow-auto">
+                                <table class="dash-user-table table scaning-table gosite-table">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th scope="col">Site</th>
+                                            <th scope="col">Business Name</th>
+                                            <th scope="col">Address</th>
+                                            <th scope="col">Phone</th>
+                                            <th scope="col">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="w-100 float-start mt-4">
+                                                    <span
+                                                        class="float-start  gloxbal-gray_bg rounded-circle py-3 px-3  me-3"><img
+                                                            src="images/google.svg" class="ico-ico" /></span>
+                                                    <span class="float-start mt-2 ">
+                                                        <h6 class="gosite_big-txt mb-0 p-0 global-gray"><b>Google</b>
+                                                        </h6>
+                                                        <% if(google.data.response.status !='NO_MATCH' ) { %>
+                                                            <a target="_blank" href="<%=google.data.response.url%>">
+                                                                <p class="text-primary">View Listing</p>
+                                                            </a>
+                                                            <% }%>
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <p>
+                                                    <% if(google.data.response.status !='NO_MATCH' ) { %>
+                                                        <%=google.data.response.name%>
+                                                            <% }%>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p>
+                                                    <% if(google.data.response.status !='NO_MATCH' ) { %>
+                                                        <%=google.data.response.address%>
+                                                            <% }%>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p>
+                                                    <% if(google.data.response.status !='NO_MATCH' ) { %>
+                                                        <%=google.data.response.phone%>
+                                                            <% }%>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <% if(google.data.response.status=='NO_MATCH' ) { %>
+                                                    <button type="button" class="btn btn-danger"><img
+                                                            src="images/error-4.svg" class="ico-ico pe-3" />Not
+                                                        Found</button>
+                                                    <% } else { if(google.data.response.match_name==false ) { %>
+                                                        <button type="button" class="btn btn-warning"><img
+                                                                src="images/warning.svg" class="ico-ico pe-3" />Wrong
+                                                            Name</button>
+                                                        <% } else if(google.data.response.match_address==false ) { %>
+                                                            <button type="button" class="btn btn-warning"><img
+                                                                    src="images/warning.svg"
+                                                                    class="ico-ico pe-3" />Wrong
+                                                                Address</button>
+                                                            <% } else if(google.data.response.match_phone==false ) { %>
+                                                                <button type="button" class="btn btn-warning"><img
+                                                                        src="images/warning.svg"
+                                                                        class="ico-ico pe-3" />Wrong
+                                                                    Phone Number</button>
+                                                                <% } else { %>
+                                                                    <button type="button" class="btn btn-success"><img
+                                                                            src="images/verified.png"
+                                                                            class="ico-ico pe-3" />Verified</button>
+                                                                    <% } }%>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="w-100 float-start mt-4">
+                                                    <span
+                                                        class="float-start  global-gray_bg rounded-circle py-3 px-3  me-3"><img
+                                                            src="images/y!.svg" class="ico-ico" /></span>
+                                                    <span class="float-start mt-2 ">
+                                                        <h6 class="gosite_big-txt mb-0 p-0 global-gray"><b>Yahoo</b>
+                                                        </h6>
+                                                        <% if(yahoo.data.response.status !='NO_MATCH' ) { %>
+                                                            <a target="_blank" href="<%=yahoo.data.response.url%>">
+                                                                <p class="text-primary">View Listing</p>
+                                                            </a>
+                                                            <% }%>
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <p>
+                                                    <% if(yahoo.data.response.status !='NO_MATCH' ) { %>
+                                                        <%=yahoo.data.response.name%>
+                                                            <% }%>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p>
+                                                    <% if(yahoo.data.response.status !='NO_MATCH' ) { %>
+                                                        <%=yahoo.data.response.address%>
+                                                            <% }%>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p>
+                                                    <% if(yahoo.data.response.status !='NO_MATCH' ) { %>
+                                                        <%=yahoo.data.response.phone%>
+                                                            <% }%>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <% if(yahoo.data.response.status=='NO_MATCH' ) { %>
+                                                    <button type="button" class="btn btn-danger"><img
+                                                            src="images/error-4.svg" class="ico-ico pe-3" />Not
+                                                        Found</button>
+                                                    <% } else { if(yahoo.data.response.match_name==false ) { %>
+                                                        <button type="button" class="btn btn-warning"><img
+                                                                src="images/warning.svg" class="ico-ico pe-3" />Wrong
+                                                            Name</button>
+                                                        <% } else if(yahoo.data.response.match_address==false ) { %>
+                                                            <button type="button" class="btn btn-warning"><img
+                                                                    src="images/warning.svg"
+                                                                    class="ico-ico pe-3" />Wrong
+                                                                Address</button>
+                                                            <% } else if(yahoo.data.response.match_phone==false ) { %>
+                                                                <button type="button" class="btn btn-warning"><img
+                                                                        src="images/warning.svg"
+                                                                        class="ico-ico pe-3" />Wrong
+                                                                    Phone Number</button>
+                                                                <% } else { %>
+                                                                    <button type="button" class="btn btn-success"><img
+                                                                            src="images/warning.svg"
+                                                                            class="ico-ico pe-3" />Verified</button>
+                                                                    <% } }%>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="w-100 float-start mt-4">
+                                                    <span
+                                                        class="float-start  global-gray_bg rounded-circle py-3 px-3  me-3"><img
+                                                            src="images/fb.svg" class="ico-ico" /></span>
+                                                    <span class="float-start mt-2 ">
+                                                        <h6 class="gosite_big-txt mb-0 p-0 global-gray"><b>Facebook</b>
+                                                        </h6>
+                                                        <% if(facebook.data.response.status !='NO_MATCH' ) { %>
+                                                            <a target="_blank" href="<%=facebook.data.response.url%>">
+                                                                <p class="text-primary">View Listing</p>
+                                                            </a>
+                                                            <% }%>
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            </td>
+                                            <td>
+                                                <p>
+                                                    <% if(facebook.data.response.status !='NO_MATCH' ) { %>
+                                                        <%=facebook.data.response.name%>
+                                                            <% }%>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p>
+                                                    <% if(facebook.data.response.status !='NO_MATCH' ) { %>
+                                                        <%=facebook.data.response.address%>
+                                                            <% }%>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p>
+                                                    <% if(facebook.data.response.status !='NO_MATCH' ) { %>
+                                                        <%=facebook.data.response.phone%>
+                                                            <% }%>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <% if(facebook.data.response.status=='NO_MATCH' ) { %>
+                                                    <button type="button" class="btn btn-danger"><img
+                                                            src="images/error-4.svg" class="ico-ico pe-3" />Not
+                                                        Found</button>
+                                                    <% } else { if(facebook.data.response.match_name==false ) { %>
+                                                        <button type="button" class="btn btn-warning"><img
+                                                                src="images/warning.svg" class="ico-ico pe-3" />Wrong
+                                                            Name</button>
+                                                        <% } else if(facebook.data.response.match_address==false ) { %>
+                                                            <button type="button" class="btn btn-warning"><img
+                                                                    src="images/warning.svg"
+                                                                    class="ico-ico pe-3" />Wrong
+                                                                Address</button>
+                                                            <% } else if(facebook.data.response.match_phone==false ) {
+                                                                %>
+                                                                <button type="button" class="btn btn-warning"><img
+                                                                        src="images/warning.svg"
+                                                                        class="ico-ico pe-3" />Wrong
+                                                                    Phone Number</button>
+                                                                <% } else { %>
+                                                                    <button type="button" class="btn btn-success"><img
+                                                                            src="images/warning.svg"
+                                                                            class="ico-ico pe-3" />Verified</button>
+                                                                    <% } }%>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="w-100 float-start mt-4">
+                                                    <span
+                                                        class="float-start  global-gray_bg rounded-circle py-3 px-3  me-3"><img
+                                                            src="images/yelp.svg" class="ico-ico" /></span>
+                                                    <span class="float-start mt-2 ">
+                                                        <h6 class="gosite_big-txt mb-0 p-0 global-gray"><b>Yelp</b></h6>
+                                                        <% if(yelp.data.response.status !='NO_MATCH' ) { %>
+                                                            <a target="_blank" href="<%=yelp.data.response.url%>">
+                                                                <p class="text-primary">View Listing</p>
+                                                            </a>
+                                                            <% }%>
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <p>
+                                                    <% if(yelp.data.response.status !='NO_MATCH' ) { %>
+                                                        <%=yelp.data.response.name%>
+                                                            <% }%>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p>
+                                                    <% if(yelp.data.response.status !='NO_MATCH' ) { %>
+                                                        <%=yelp.data.response.address%>
+                                                            <% }%>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p>
+                                                    <% if(yelp.data.response.status !='NO_MATCH' ) { %>
+                                                        <%=yelp.data.response.phone%>
+                                                            <% }%>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <% if(yelp.data.response.status=='NO_MATCH' ) { %>
+                                                    <button type="button" class="btn btn-danger"><img
+                                                            src="images/error-4.svg" class="ico-ico pe-3" />Not
+                                                        Found</button>
+                                                    <% } else { if(yelp.data.response.match_name==false ) { %>
+                                                        <button type="button" class="btn btn-warning"><img
+                                                                src="images/warning.svg" class="ico-ico pe-3" />Wrong
+                                                            Name</button>
+                                                        <% } else if(yelp.data.response.match_address==false ) { %>
+                                                            <button type="button" class="btn btn-warning"><img
+                                                                    src="images/warning.svg"
+                                                                    class="ico-ico pe-3" />Wrong
+                                                                Address</button>
+                                                            <% } else if(yelp.data.response.match_phone==false ) { %>
+                                                                <button type="button" class="btn btn-warning"><img
+                                                                        src="images/warning.svg"
+                                                                        class="ico-ico pe-3" />Wrong
+                                                                    Phone Number</button>
+                                                                <% } else { %>
+                                                                    <button type="button" class="btn btn-success"><img
+                                                                            src="images/warning.svg"
+                                                                            class="ico-ico pe-3" />Verified</button>
+                                                                    <% } }%>
+                                            </td>
+                                        </tr>
+										
+										 <tr>
+                              <td>
+                                <div class="w-100 float-start mt-4">
+                                    <span class="float-start  global-gray_bg rounded-circle py-3 px-3  me-3"><img src="images/microsoftbing.svg" class="ico-ico"/></span>
+                                     <span class="float-start mt-2 "><h6 class="gosite_big-txt mb-0 p-0 global-gray"><b>Bing</b></h6>
+                                        <p class="text-primary">View Listing</p></span>
+                                </div>
+                              </td>
+                              <td><p>Cha For Tea - University Town Center</p></td>
+                              <td><p>4187 Campus Dr
+                                Irvine, CA 92612</p></td>
+                              <td><p>(949) 725-0300</p></td>
+                              <td>
+                                <button type="button" class="btn btn-warning"><img src="images/warning.svg" class="ico-ico pe-3"/>Not Verified Through You</button>
+                            </td>
+                            </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+							        <div class="table-collapse"> 
+                          <p class="table-expnd-btn">
+                            <a class="btn btn-primary global-gray collapsed" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                               <span class="txt-expnt"><i class="fa fa-arrow-up"></i>  EXPAND ALL </span>     
+                            </a>
+                            </p>
+                        <div class="collapse p-0" id="collapseExample">
+                            <div class= "card card-body p-0 border-0">
+                            
+                    <table class="dash-user-table table scaning-table gosite-table">
+                        <thead class="table-none">
+                            <tr>
+                              <th scope="col"></th>
+                              <th scope="col"></th>
+                              <th scope="col"></th>
+                              <th scope="col"></th>
+                              <th scope="col"></th>
+                            </tr>
+                          </thead>
+                        <tbody>
+                            <tr>
+                              <td>
+                                <div class="w-100 float-start mt-4">
+                                    <span class="float-start  global-gray_bg rounded-circle py-3 px-3  me-3"><img src="images/google.svg" class="ico-ico"/></span>
+                                     <span class="float-start mt-2 "><h6 class="gosite_big-txt mb-0 p-0 global-gray"><b>Google</b></h6>
+                                        <p class="text-primary">View Listing</p></span>
+                                </div>
+                              </td>
+                              <td><p>Cha For Tea - University Town Center</p></td>
+                              <td><p>4187 Campus Dr
+                                Irvine, CA 92612</p></td>
+                              <td><p>(949) 725-0300</p></td>
+                              <td>
+                                <button type="button" class="btn btn-warning"><img src="images/warning.svg" class="ico-ico pe-3"/>Not Verified Through You</button>
+                            </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="w-100 float-start mt-4">
+                                    <span class="float-start  global-gray_bg rounded-circle py-3 px-3  me-3"><img src="images/y!.svg" class="ico-ico"/></span>
+                                     <span class="float-start mt-2 "><h6 class="gosite_big-txt mb-0 p-0 global-gray"><b>Yahoo</b></h6>
+                                        <p class="text-primary">View Listing</p></span>
+                                </div>
+                              </td>
+                              <td><p>Cha For Tea - University Town Center</p></td>
+                              <td><p>4187 Campus Dr
+                                Irvine, CA 92612</p></td>
+                              <td><p>(949) 725-0300</p></td>
+                              <td>
+                                <button type="button" class="btn btn-warning"><img src="images/warning.svg" class="ico-ico pe-3"/>Not Verified Through You</button>
+                            </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="w-100 float-start mt-4">
+                                    <span class="float-start  global-gray_bg rounded-circle py-3 px-3  me-3"><img src="images/fb.svg" class="ico-ico"/></span>
+                                     <span class="float-start mt-2 "><h6 class="gosite_big-txt mb-0 p-0 global-gray"><b>Facebook</b></h6>
+                                        <p class="text-primary">View Listing</p></span>
+                                </div>
+                              </td>
+                              <td><p>Cha For Tea - University Town Center</p></td>
+                              <td><p>4187 Campus Dr
+                                Irvine, CA 92612</p></td>
+                              <td><p>(949) 725-0300</p></td>
+                              <td>
+                                <button type="button" class="btn btn-danger"><img src="images/error-4.svg" class="ico-ico pe-3"/>Wrong Phone Number</button>
+                            </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="w-100 float-start mt-4">
+                                    <span class="float-start  global-gray_bg rounded-circle py-3 px-3  me-3"><img src="images/yelp.svg" class="ico-ico"/></span>
+                                     <span class="float-start mt-2 "><h6 class="gosite_big-txt mb-0 p-0 global-gray"><b>Yelp</b></h6>
+                                        <p class="text-primary">View Listing</p></span>
+                                </div>
+                              </td>
+                              <td><p>Cha For Tea - University Town Center</p></td>
+                              <td><p>4187 Campus Dr
+                                Irvine, CA 92612</p></td>
+                              <td><p>(949) 725-0300</p></td>
+                              <td>
+                                <button type="button" class="btn btn-warning"><img src="images/warning.svg" class="ico-ico pe-3"/>Not Verified Through You</button>
+                            </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="w-100 float-start mt-4">
+                                    <span class="float-start  global-gray_bg rounded-circle py-3 px-3  me-3"><img src="images/microsoftbing.svg" class="ico-ico"/></span>
+                                     <span class="float-start mt-2 "><h6 class="gosite_big-txt mb-0 p-0 global-gray"><b>Bing</b></h6>
+                                        <p class="text-primary">View Listing</p></span>
+                                </div>
+                              </td>
+                              <td><p>Cha For Tea - University Town Center</p></td>
+                              <td><p>4187 Campus Dr
+                                Irvine, CA 92612</p></td>
+                              <td><p>(949) 725-0300</p></td>
+                              <td>
+                                <button type="button" class="btn btn-warning"><img src="images/warning.svg" class="ico-ico pe-3"/>Not Verified Through You</button>
+                            </td>
+                            </tr>
+                            
+                        </tbody>
+                      </table>
+                       
+                            </div>
+                          </div>
+                      </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-4 scan-discover">
+                        <div class="process-list">
+                            <div class="process-list-head border-0">
+                                <h4>Discovery</h4>
+                            </div>
+
+                            <div class="row pb-5">
+                                <div class="col-md-3 text-center donut-img">
+                                    <img src="images/donut1.svg" class="ellip-ico" />
+                                </div>
+                                <div class="col-md-9 gosite-banner-cont  ">
+                                    <div class="row m-0">
+                                        <div class="col-md-3 ps-0">
+                                            <ul>
+                                                <li class="w-100 float-start mt-0">
+                                                    <span class="float-start">
+                                                        <h1 class="gosite_big-txt mb-0 p-0"><b>87.7%</b><img
+                                                                src="images/info.svg" class="info-ico" /></h1>Discovery
+                                                    </span>
+                                                </li>
+                                                <li class="w-100 float-start mt-5">
+                                                    <span class="float-start">
+                                                        <h1 class="gosite_big-txt mb-0 p-0"><b>94,975</b> <img
+                                                                src="images/info.svg" class="info-ico" /></h1>Searches
+                                                    </span>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-9 ps-3">
+                                            <ul class="discover-lists">
+                                                <li>
+                                                    <span class="bullets"><img src="images/list-light.svg"
+                                                            class="pin-ico float-start me-2" /></span>
+                                                    <h6 class="gosite_big-txt mb-0 p-0 global-gray"><b>Direct</b></h6>
+                                                    <p>People who find your Business Profile searching for your business
+                                                        name or
+                                                        business address.</p>
+                                                </li>
+                                                <li>
+                                                    <span class="bullets"><img src="images/list-dark.svg"
+                                                            class="pin-ico float-start me-2" /></span>
+                                                    <h6 class="gosite_big-txt mb-0 p-0 global-gray"><b>Branded</b></h6>
+                                                    <span></span>
+                                                    <p>Customers who find your listing searching for a brand related to
+                                                        your
+                                                        business.</p>
+                                                </li>
+                                                <li>
+                                                    <span class="bullets"><img src="images/list-dark.svg"
+                                                            class="pin-ico float-start me-2" /></span>
+                                                    <h6 class="gosite_big-txt mb-0 p-0 global-gray"><b>Discovery</b>
+                                                    </h6>
+                                                    <span></span>
+                                                    <p>People who find your Business Profile searching for a category,
+                                                        product
+                                                        or service.</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-4 key-ranking">
+                        <div class="process-list">
+                            <div class="process-list-head">
+                                <h4>Top Keyword Rankings</h4>
+                            </div>
+                            <div class="process-list-cont">
+                                <% if(keywords.length> 0 ) { %>
+                                    <ul class="ranking-lists">
+                                        <% keywords.forEach(function(post){ %>
+                                            <% if(post.position !='' ) { %>
+                                                <li>
+                                                    <span class="bullets"><img src="images/vector-up.svg"
+                                                            class="pin-ico float-start me-2" /></span>
+                                                    <p>#<%= post.position %>
+                                                            <%= post.key %>
+                                                    </p>
+                                                </li>
+                                                <% }}) %>
+                                    </ul>
+                                    <% } else { %>
+                                        <span>No Keyword Found</span>
+                                        <% } %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-4 rwe-respons">
+                        <% let total_review=0; let rating=0; if(google.data.response.status!='NO_MATCH' ) {
+                            total_review=total_review+ google.data.response.review_count; rating=rating +
+                            google.data.response.review_rating; } else if(facebook.data.response.status!='NO_MATCH' ) {
+                            total_review=total_review + facebook.data.response.review_count; rating=rating +
+                            facebook.data.response.review_rating; } else if(yahoo.data.response.status!='NO_MATCH' ) {
+                            total_review=total_review + yahoo.data.response.review_count; rating=rating +
+                            yahoo.data.response.review_rating; } else if(yelp.data.response.status!='NO_MATCH' ) {
+                            total_review=total_review + yelp.data.response.review_count; rating=rating +
+                            yelp.data.response.review_rating; } %>
+                            <div class="process-list">
+                                <div class="process-list-head ">
+                                    <h4><span class="text-start ">Review Responses</span>
+                                        <span class="text-end text-primary float-end place-rate"><b>0% Response
+                                                Rate</b></span>
+                                    </h4>
+                                </div>
+
+                                <div class="row pb-5">
+                                    <div class="col-md-3 text-center donut-img">
+                                        <img src="images/light-donut.svg" class="ellip-ico" />
+                                    </div>
+                                    <div class="col-md-2 gosite-banner-cont pe-0  ">
+                                        <div class="w-100 mt-4 list-itams-image star-list">
+                                            <span class="pe-4 icon-list-image"><img src="images/star-icon.svg"
+                                                    class="star-ico"></span>
+                                            <span class="list-img-cont">
+                                                <h1 class="gosite_big-txt mb-0 p-0"><b>
+                                                        <%=rating%>
+                                                    </b></h1>Overall Rating
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2 gosite-banner-cont pe-0  ">
+                                        <div class="w-100 mt-4 list-itams-image rew-list">
+                                            <span class=" pe-4 icon-list-image"><img src="images/reviews.svg"
+                                                    class="rew-ico"></span>
+                                            <span class="list-img-cont">
+                                                <h1 class="gosite_big-txt mb-0 p-0"><b>
+                                                        <%=total_review%>
+                                                    </b><img src="images/info.svg" class="info-ico"></h1>Total Reviews
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 gosite-banner-cont pe-0  ">
+                                        <div class="w-100  mt-4 list-itams-image">
+                                            <span class="pe-4 icon-list-image"><img src="images/messages-bubble.svg"
+                                                    class="buble-ico"></span>
+                                            <span class="list-img-cont">
+                                                <h1 class="gosite_big-txt mb-0 p-0"><b>
+                                                        <%=total_review%>
+                                                    </b><img src="images/info.svg" class="info-ico"></h1>Unaddressed
+                                                Reviews
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 gosite-banner-cont pe-0  ">
+                                        <div class="w-100  mt-4 list-itams-image">
+                                            <span class=" pe-4 icon-list-image"><img src="images/Standing-prsn.svg"
+                                                    class="person-ico"></span>
+                                            <span class="list-img-cont">
+                                                <h1 class="gosite_big-txt mb-0 p-0"><b>0</b></h1>Reviews from last 30
+                                                days
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-md-12 mb-4 Competitive-scaning">
+                        <div class="process-list">
+                            <div class="process-list-head border-0">
+                                <h4 class="mb-3">Competitive Analysis</h4>
+                                <p>Viverra eu vitae amet consectetur ultricies. Nisi adipiscing mauris proin dictum.
+                                    Consectetur a lectus volutpat id. Facilisis cursus tellus a odio erat sit.
+                                    Quis hendrerit ultrices congue euismod nascetur. Ullamcorper vitae eget nulla eu
+                                    quisque sagittis cursus porttitor.</p>
+
+                                <div class="row m-0 border  list_inone">
+                                    <div class="col-md-4">
+                                        <span class="bullets"><img src="images/list-dark.svg"
+                                                class="pin-ico float-start me-2"></span>
+                                        <h6 class="gosite_big-txt mb-0 p-0 global-gray"><b>Cha For Tea - University Town
+                                                Center</b></h6>
+                                        <p>4187 Campus Dr, Irvine, CA 92612</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span class="bullets"><img src="images/list-dark.svg"
+                                                class="pin-ico float-start me-2"></span>
+                                        <h6 class="gosite_big-txt mb-0 p-0 global-gray"><b>Sharetea UCI</b></h6>
+                                        <p>4199 Campus Dr suite c, Irvine, CA 92612</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span class="bullets"><img src="images/list-light.svg"
+                                                class="pin-ico float-start me-2"></span>
+                                        <h6 class="gosite_big-txt mb-0 p-0 global-gray"><b>Tan-Cha</b></h6>
+                                        <p>5317 University Dr, Irvine, CA 92612</p>
+                                    </div>
+                                </div>
+                                <div class=" process-inner-list row m-0 text-center mt-4 ">
+                                    <h5 class="mb-3 text-center"><b>Website Secure</b></h5>
+                                    <div class="col-md-4  ps-0 secure-card">
+                                        <div class="process-list p-4">
+                                            <h5 class="text-primary"><img src="images/guard.svg"
+                                                    class="global-ico pe-2" /><b>
+                                                    Secure</b></h5>
+                                            <p class="text-center">Cha For Tea - University Town Center<br>
+                                                https://www.chafortea.com/</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4  pe-0 no-secure-card">
+                                        <div class="process-list p-4">
+                                            <h5 class="global-gray"><img src="images/unlocked.svg"
+                                                    class="global-ico pe-2" /><b>Not Secure</b></h5>
+                                            <p class="text-center">Sharetea UCI<br>
+                                                https://www.1992sharetea.com/sharetealocations/irvine-ca-uci/</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4  pe-0 no-secure-card">
+                                        <div class="process-list p-4">
+                                            <h5 class="global-gray"><img src="images/unlocked.svg"
+                                                    class="global-ico pe-2" /><b>Not Secure</b></h5>
+                                            <p class="text-center">Tan-Cha<br>
+                                                https://www.tan-cha.net/</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gosite_page-speed_score mt-4">
+                                    <h5 class="mb-4  text-center"><b>Website Page Speed Score</b></h5>
+                                    <div class="row px-5 test-[rogress-bars mb-5">
+                                        <div class="col-md-12 test-progress-bars ps-5">
+                                            <div class="progress mobile-progress-count">
+                                                <div class="progress-bar text-end" role="progressbar"
+                                                    style="width: 95%;" aria-valuenow="97" aria-valuemin="0"
+                                                    aria-valuemax="100">
+                                                    <span class="text-start w-auto float-start ps-3">
+                                                        <img src="images/cellphone-link00.svg"
+                                                            class="global-ico pe-2" />
+                                                        <%=body.name%>
+                                                    </span>
+                                                    <span class="text-end w-auto float-end">
+                                                        <%=mobile_score * 100%>%
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="progress mt-3 Desktop-progress-count">
+                                                <div style="background:#3D7EFF;background-color:#3D7EFF;width: 53%;"
+                                                    class="progress-bar text-end" role="progressbar" aria-valuenow="97"
+                                                    aria-valuemin="0" aria-valuemax="100">
+                                                    <span
+                                                        class="text-start w-auto float-start ps                                class="
+                                                        global-ico pe-2" />Sharetea UCI</span>
+                                                    <span class="text-end w-auto float-end">53%</span>
+                                                    </divxxxxxxxxx`x x x x x x x x x>
+                                                </div>
+                                                <div class="progress mt-3 Desktop-progress-count">
+                                                    <div class="progress-bar text-end" role="progressbar"
+                                                        style="width: 81%;" aria-valuenow="97" aria-valuemin="0"
+                                                        aria-valuemax="100">
+                                                        <span class="text-start w-auto float-start ps-3">
+                                                            <img src="images/cellphone-link00.svg"
+                                                                class="global-ico pe-2" />Tan-Cha</span>
+                                                        <span class="text-end w-auto float-end">81%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <section class="scan-last-sec mb-5 pb-5 text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 gosite-banner-cont  ">
+
+                        <h1><b>Placerat vitae ac diam iaculis.</b></h1>
+                        <p>Integer lorem amet non quam tincidunt ut non. Vestibulum elit,
+                            at ipsum neque facilisis nisl. Suspendisse posuere pellentesque non tellus fringilla.</p>
+                        <div class="cta-btn">
+                            <a class="nav-link free-trial-btn btn-primary global-button" href="#">CTA BUTTON CLICK HERE
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <%- include('../partials/footer'); %>
+
+</body>
+
+</html>

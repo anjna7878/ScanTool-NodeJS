@@ -1,0 +1,86 @@
+<% if (success) { %>
+    <div class="process-list">
+        <div class="process-list-head border-0">
+            <h4>Discovery</h4>
+        </div>
+
+        <!-- <img src="images/donut1.svg" class="ellip-ico" /> -->
+        <div class="row pb-5">
+            <div class="col-md-3 text-center donut-img">
+                <input type="hidden" id="total_val" value="<%=total%>">
+                <input type="hidden" id="discovery_search" value="<%=discovery_percentage%>">
+                <input type="hidden" id="direct_search" value="<%=direct_percentage%>">
+                <input type="hidden" id="brand_search" value="<%=brand_percentage%>">
+                <!-- <div id="chartContainer" style="height: 300px; width: 100%;"></div> -->
+                <canvas id="myChart" width="400" height="400"></canvas>
+            </div>
+            <div class="col-md-9 gosite-banner-cont  ">
+                <div class="row m-0">
+                    <div class="col-md-3 ps-0">
+                        <ul>
+                            <li class="w-100 float-start mt-0">
+                                <span class="float-start">
+                                    <h1 class="gosite_big-txt mb-0 p-0"><b>
+                                            <%=discovery_search%>
+                                        </b><img src="images/info.svg" class="info-ico" /></h1>Discovery
+                                </span>
+                            </li>
+                            <li class="w-100 float-start mt-5">
+                                <span class="float-start">
+                                    <h1 class="gosite_big-txt mb-0 p-0"><b>
+                                            <%=total%>
+                                        </b> <img src="images/info.svg" class="info-ico" /></h1>Searches
+                                </span>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="col-md-9 ps-3">
+                        <ul class="discover-lists">
+                            <li>
+                                <span class="bullets"><img src="images/list-light.svg"
+                                        class="pin-ico float-start me-2" /></span>
+                                <h6 class="gosite_big-txt mb-0 p-0 global-gray"><b>Direct</b></h6>
+                                <p>People who find your Business Profile searching for your business
+                                    name or
+                                    business address.</p>
+                            </li>
+                            <li>
+                                <span class="bullets"><img src="images/list-dark.svg"
+                                        class="pin-ico float-start me-2" /></span>
+                                <h6 class="gosite_big-txt mb-0 p-0 global-gray"><b>Branded</b></h6>
+                                <span></span>
+                                <p>Customers who find your listing searching for a brand related to
+                                    your
+                                    business.</p>
+                            </li>
+                            <li>
+                                <span class="bullets"><img src="images/list-dark.svg"
+                                        class="pin-ico float-start me-2" /></span>
+                                <h6 class="gosite_big-txt mb-0 p-0 global-gray"><b>Discovery</b>
+                                </h6>
+                                <span></span>
+                                <p>People who find your Business Profile searching for a category,
+                                    product
+                                    or service.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+<% } else { %>
+    <div class="process-list">
+        <div class="process-list-head ">
+            <h4><span class="text-start ">Discovery</span>
+            </h4>
+        </div>
+
+        <div class="process-list-cont">
+            <p><%=error%></p>
+        </div>
+    </div>
+<% } %>
